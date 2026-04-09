@@ -390,35 +390,28 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:56px 0
 <body>
 <div id="nav-container"></div>
 <div id="main-content">
-      <div id="page-home-container"></div>
-      <div id="page-about-container"></div>
-      <div id="page-services-container"></div>
-      <div id="page-products-container"></div>
-      <div id="page-membership-container"></div>
-      <div id="page-transformation-container"></div>
-      <div id="page-reviews-container"></div>
-      <div id="page-contact-container"></div>
+  <div id="page-home-container"></div>
+  <div id="page-about-container"></div>
+  <div id="page-services-container"></div>
+  <div id="page-products-container"></div>
+  <div id="page-membership-container"></div>
+  <div id="page-transformation-container"></div>
+  <div id="page-reviews-container"></div>
+  <div id="page-contact-container"></div>
 </div>
 <script src="js/main.js"></script>
 <script src="js/slideshow.js"></script>
 <script>
-
 async function loadComponents() {
-  // Load navbar
-  const navRes = await fetch('components/navbar.html');
-  document.getElementById('nav-container').innerHTML = await navRes.text();
-  // Load pages
-  const pageNames = ['home', 'about', 'services', 'products', 'membership', 'transformation', 'reviews', 'contact'];
-  for (const name of pageNames) {
-    const res = await fetch('pages/page-' + name + '.html');
-    document.getElementById('page-' + name + '-container').innerHTML = await res.text();
+  const nav = await fetch('components/navbar.html');
+  document.getElementById('nav-container').innerHTML = await nav.text();
+  const names = ['home', 'about', 'services', 'products', 'membership', 'transformation', 'reviews', 'contact'];
+  for (const n of names) {
+    const r = await fetch('pages/page-' + n + '.html');
+    document.getElementById('page-' + n + '-container').innerHTML = await r.text();
   }
-  // Init app after loading
-  if (typeof initApp === 'function') initApp();
-  if (typeof initSlideshow === 'function') initSlideshow();
 }
 document.addEventListener('DOMContentLoaded', loadComponents);
-
 </script>
 </body>
 </html>
