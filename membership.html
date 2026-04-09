@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Membership Plans – FitHUb Nutrition Center Ahmedabad</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.page-hero{padding:130px 0 70px;background:var(--gradient-hero);text-align:center;border-bottom:1px solid var(--border);}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,58px);font-weight:700;color:var(--brown);}
+.page-hero p{font-size:16px;color:var(--text-muted);margin-top:10px;}
+.breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:14px;}
+.breadcrumb a{color:var(--accent);}
+
+/* WORLD HEALTH DAY OFFER */
+.offer-banner{background:linear-gradient(135deg,#1a3a2a,#0d2a1a);padding:56px 0;position:relative;overflow:hidden;}
+.offer-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(74,124,89,0.15),transparent 70%);}
+.offer-banner-inner{position:relative;z-index:1;text-align:center;}
+.offer-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(74,124,89,0.20);border:1px solid rgba(74,124,89,0.35);border-radius:50px;padding:7px 18px;font-size:12px;font-weight:800;color:#6BA07A;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+.offer-banner-inner h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,42px);font-weight:700;color:#fff;margin-bottom:8px;}
+.offer-banner-inner p{font-size:15px;color:rgba(255,255,255,0.70);margin-bottom:36px;}
+.offer-cards{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+.offer-card{background:rgba(255,255,255,0.07);border:1px solid rgba(74,124,89,0.30);border-radius:18px;padding:24px 32px;text-align:center;transition:all 0.3s;min-width:180px;}
+.offer-card:hover{border-color:#6BA07A;background:rgba(74,124,89,0.12);transform:translateY(-4px);}
+.offer-pct{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:#6BA07A;}
+.offer-desc{font-size:13px;color:rgba(255,255,255,0.60);margin-top:4px;}
+.offer-label{font-size:14px;font-weight:700;color:#fff;margin-top:8px;}
+
+/* PLANS */
+.plans-section{background:#fff;}
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px;}
+.plan-card{background:var(--cream);border:1.5px solid var(--border-light);border-radius:24px;padding:36px 28px;position:relative;transition:all 0.4s;}
+.plan-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px var(--shadow-strong);}
+.plan-card.featured{background:linear-gradient(160deg,#fff 0%,rgba(200,129,58,0.04) 100%);border-color:var(--accent);box-shadow:0 8px 32px rgba(200,129,58,0.15);}
+.plan-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient-accent);border-radius:24px 24px 0 0;}
+.plan-badge{display:inline-flex;align-items:center;gap:6px;border-radius:50px;padding:4px 14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:18px;}
+.badge-starter{background:rgba(74,124,89,0.10);color:var(--green);}
+.badge-popular{background:rgba(200,129,58,0.12);color:var(--accent);}
+.badge-premium{background:rgba(61,43,31,0.08);color:var(--brown);}
+.plan-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--brown);margin-bottom:6px;}
+.plan-desc{font-size:13px;color:var(--text-muted);margin-bottom:24px;}
+.plan-duration{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--accent);margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border-light);}
+.plan-features{list-style:none;margin-bottom:28px;}
+.plan-features li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-muted);padding:8px 0;border-bottom:1px solid rgba(0,0,0,0.04);}
+.plan-features li:last-child{border:none;}
+.plan-features li .chk{color:var(--green);font-weight:800;flex-shrink:0;font-size:15px;}
+.plan-cta{width:100%;padding:14px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all 0.3s;border:none;}
+.cta-filled{background:var(--gradient-accent);color:#fff;box-shadow:0 4px 16px rgba(200,129,58,0.30);}
+.cta-filled:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,129,58,0.40);}
+.cta-border{background:transparent;color:var(--accent);border:2px solid var(--accent)!important;border-radius:50px;}
+.cta-border:hover{background:rgba(200,129,58,0.07);}
+.price-note{text-align:center;font-size:13px;color:var(--text-muted);margin-top:18px;font-style:italic;}
+
+/* BENEFITS -->
+.benefits-section{background:var(--cream2);}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
+.benefit-chip{background:#fff;border:1px solid var(--border-light);border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;color:var(--brown);transition:all 0.3s;}
+.benefit-chip:hover{border-color:var(--accent);box-shadow:0 4px 14px var(--shadow);}
+.benefit-chip .ico{font-size:22px;}
+
+@media(max-width:900px){
+  .plans-grid{grid-template-columns:1fr;}
+  .benefits-grid{grid-template-columns:1fr 1fr;}
+  .offer-cards{flex-direction:column;align-items:center;}
+}
+@media(max-width:600px){
+  .benefits-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body data-page="membership">
+<div id="nav-placeholder"></div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> › Membership</div>
+    <h1>Membership <em style="font-style:italic;color:var(--accent)">Plans</em></h1>
+    <p>Choose your transformation journey — flexible plans for every goal</p>
+  </div>
+</div>
+
+<!-- WORLD HEALTH DAY OFFER -->
+<div class="offer-banner">
+  <div class="container">
+    <div class="offer-banner-inner reveal">
+      <div class="offer-tag">🌍 World Health Day Special</div>
+      <h2>Celebrate Health — Exclusive Discounts!</h2>
+      <p>Limited time World Health Day offers on all memberships</p>
+      <div class="offer-cards">
+        <div class="offer-card"><div class="offer-pct">10%</div><div class="offer-desc">1 Person</div><div class="offer-label">1 Month Membership</div></div>
+        <div class="offer-card"><div class="offer-pct">15%</div><div class="offer-desc">2+ Persons</div><div class="offer-label">1 Month Membership</div></div>
+        <div class="offer-card"><div class="offer-pct">25%</div><div class="offer-desc">Best Value</div><div class="offer-label">3 Month Membership</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PLANS -->
+<section class="plans-section">
+<div class="container">
+  <div class="text-center reveal">
+    <div class="section-label">Choose Your Plan</div>
+    <h2 class="section-title">Find Your Perfect <em>Wellness Journey</em></h2>
+    <div class="divider"></div>
+    <p class="section-sub">Every plan includes personalized coaching, nutritional guidance, and the full FitHUb community support. Pricing on enquiry.</p>
+  </div>
+  <div class="plans-grid">
+    <div class="plan-card reveal">
+      <div class="plan-badge badge-starter">🌱 Starter</div>
+      <div class="plan-name">6 Days Trial</div>
+      <div class="plan-desc">Experience the FitHUb difference risk-free</div>
+      <div class="plan-duration">6-Day Program</div>
+      <ul class="plan-features">
+        <li><span class="chk">✓</span>5 Days workout sessions</li>
+        <li><span class="chk">✓</span>1 Day wellness evaluation per week</li>
+        <li><span class="chk">✓</span>Weekly progress report</li>
+        <li><span class="chk">✓</span>1:1 coaching every step</li>
+        <li><span class="chk">✓</span>Top quality nutritional supplements</li>
+        <li><span class="chk">✓</span>Personalized meal guidance</li>
+      </ul>
+      <button class="plan-cta cta-border" onclick="window.location.href='contact.html'">Enquire Now</button>
+    </div>
+    <div class="plan-card featured reveal reveal-delay-1">
+      <div class="plan-badge badge-popular">🔥 Most Popular</div>
+      <div class="plan-name">1 Month Detox Program</div>
+      <div class="plan-desc">Complete detox & full body transformation</div>
+      <div class="plan-duration">30-Day Program</div>
+      <ul class="plan-features">
+        <li><span class="chk">✓</span>25 Days workout sessions</li>
+        <li><span class="chk">✓</span>5 Days wellness evaluation</li>
+        <li><span class="chk">✓</span>Detox program every week</li>
+        <li><span class="chk">✓</span>Customized meal plan</li>
+        <li><span class="chk">✓</span>Personalized supplement program</li>
+        <li><span class="chk">✓</span>Progress tracking & weekly reports</li>
+        <li><span class="chk">✓</span>Community support access</li>
+      </ul>
+      <button class="plan-cta cta-filled" onclick="window.location.href='contact.html'">Get Started Today</button>
+    </div>
+    <div class="plan-card reveal reveal-delay-2">
+      <div class="plan-badge badge-premium">⭐ Premium</div>
+      <div class="plan-name">3 Months Premium BTC</div>
+      <div class="plan-desc">Maximum transformation — Body, Mind & Soul</div>
+      <div class="plan-duration">90-Day Premium Program</div>
+      <ul class="plan-features">
+        <li><span class="chk">✓</span>75 Days workout sessions</li>
+        <li><span class="chk">✓</span>15 Days wellness evaluation</li>
+        <li><span class="chk">✓</span>Visible body transformation guaranteed</li>
+        <li><span class="chk">✓</span>Full nutrition supplement program</li>
+        <li><span class="chk">✓</span>Mindset & motivation sessions</li>
+        <li><span class="chk">✓</span>21-Day challenge included</li>
+        <li><span class="chk">✓</span>Face yoga & meditation workshops</li>
+      </ul>
+      <button class="plan-cta cta-border" onclick="window.location.href='contact.html'">Get Best Deal</button>
+    </div>
+  </div>
+  <p class="price-note">💬 Contact us for personalized pricing — special World Health Day discounts up to 25% off! Call or WhatsApp: +91 94265 08066</p>
+</div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section">
+<div class="container">
+  <div class="text-center reveal">
+    <div class="section-label">All Plans Include</div>
+    <h2 class="section-title">Every Membership <em>Benefit</em></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-chip reveal"><span class="ico">⚖️</span>Weight Loss Programs</div>
+    <div class="benefit-chip reveal reveal-delay-1"><span class="ico">💪</span>Weight Gain Programs</div>
+    <div class="benefit-chip reveal reveal-delay-2"><span class="ico">🥗</span>Balanced Nutrition Plan</div>
+    <div class="benefit-chip reveal"><span class="ico">🌅</span>Healthy Breakfast Daily</div>
+    <div class="benefit-chip reveal reveal-delay-1"><span class="ico">📊</span>Weight Management</div>
+    <div class="benefit-chip reveal reveal-delay-2"><span class="ico">💊</span>Supplement Support</div>
+    <div class="benefit-chip reveal"><span class="ico">🧠</span>Mindset Coaching</div>
+    <div class="benefit-chip reveal reveal-delay-1"><span class="ico">🤝</span>Community Support</div>
+    <div class="benefit-chip reveal reveal-delay-2"><span class="ico">📱</span>Online Coaching Option</div>
+  </div>
+  <div style="text-align:center;margin-top:40px;">
+    <a href="contact.html" class="btn-primary">Book Your Free Demo Today 🎯</a>
+  </div>
+</div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="images.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>

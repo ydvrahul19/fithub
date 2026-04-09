@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products – Healthy Shakes & Teas | FitHUb Nutrition Center</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.page-hero{padding:130px 0 70px;background:var(--gradient-hero);text-align:center;border-bottom:1px solid var(--border);}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,58px);font-weight:700;color:var(--brown);}
+.page-hero p{font-size:16px;color:var(--text-muted);margin-top:10px;}
+.breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:14px;}
+.breadcrumb a{color:var(--accent);}
+
+.products-tabs-section{background:#fff;}
+.tabs-row{display:flex;gap:8px;margin-bottom:48px;background:var(--cream2);border-radius:14px;padding:6px;width:fit-content;}
+.tab-btn{padding:11px 26px;border-radius:10px;border:none;background:transparent;color:var(--text-muted);font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all 0.3s;}
+.tab-btn.active{background:var(--gradient-accent);color:#fff;box-shadow:0 4px 14px rgba(200,129,58,0.30);}
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+.tab-intro{background:var(--cream2);border-radius:16px;padding:24px 28px;margin-bottom:32px;display:flex;gap:20px;align-items:flex-start;}
+.tab-intro .ico{font-size:36px;flex-shrink:0;}
+.tab-intro h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--brown);margin-bottom:6px;}
+.tab-intro p{font-size:14px;color:var(--text-muted);line-height:1.7;}
+.flavors-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;}
+.flavor-chip{background:var(--cream);border:1.5px solid var(--border);border-radius:14px;padding:14px 16px;font-size:14px;font-weight:600;color:var(--brown);transition:all 0.3s;display:flex;align-items:center;gap:10px;cursor:default;}
+.flavor-chip:hover{border-color:var(--accent);background:#fff;box-shadow:0 4px 14px var(--shadow);transform:translateY(-2px);}
+.flavor-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
+
+.breakfast-section{background:var(--cream2);}
+.breakfast-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:48px;}
+.breakfast-img{border-radius:20px;overflow:hidden;box-shadow:0 8px 30px var(--shadow-strong);}
+.breakfast-img img{width:100%;height:380px;object-fit:cover;}
+.breakfast-text p{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:16px;}
+.breakfast-text strong{color:var(--brown);}
+
+@media(max-width:900px){
+  .breakfast-grid{grid-template-columns:1fr;}
+  .breakfast-img img{height:260px;}
+  .tabs-row{flex-wrap:wrap;}
+}
+@media(max-width:600px){
+  .flavors-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body data-page="products">
+<div id="nav-placeholder"></div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> › Products</div>
+    <h1>Healthy <em style="font-style:italic;color:var(--accent)">Shakes & Teas</em></h1>
+    <p>Change your breakfast, change your life — a sip of purity, a taste of health</p>
+  </div>
+</div>
+
+<section class="products-tabs-section">
+<div class="container">
+  <div class="text-center reveal" style="margin-bottom:40px;">
+    <div class="section-label">Our Products</div>
+    <h2 class="section-title">Nourish Your Body <em>Every Day</em></h2>
+    <div class="divider"></div>
+    <p class="section-sub">Premium quality nutritional products in delicious flavors — making healthy living enjoyable and easy.</p>
+  </div>
+  <div style="display:flex;justify-content:center;margin-bottom:0;">
+    <div class="tabs-row">
+      <button class="tab-btn active" onclick="switchTab('shakes',this)">🥤 Healthy Shakes</button>
+      <button class="tab-btn" onclick="switchTab('teas',this)">🍵 Healthy Teas</button>
+    </div>
+  </div>
+
+  <div id="tab-shakes" class="tab-content active" style="margin-top:36px;">
+    <div class="tab-intro reveal">
+      <div class="ico">🥤</div>
+      <div>
+        <h3>Formula 1 Meal Replacement Shake</h3>
+        <p>Swap unhealthy meals for a nutritious, delicious shake. Save calories and gain good nutrition — available in 11 amazing flavors that make healthy eating enjoyable!</p>
+      </div>
+    </div>
+    <div class="flavors-grid reveal">
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#FFB347;"></span>Mango Delight</div>
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#FF69B4;"></span>Bubble Gum</div>
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#D4A055;"></span>Royal Caramel Crunch</div>
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#90EE90;"></span>Mint Mastani</div>
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#F5DEB3;"></span>Cookies & Cream</div>
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#DDA0DD;"></span>Pick Wick</div>
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#F5B800;"></span>Golden Goodness</div>
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#8B4513;"></span>Choco Nutty</div>
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#FFEAA7;"></span>Kheer Malai</div>
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#FF007F;"></span>Rose Gulkand</div>
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#8B0000;"></span>Berry Kheer</div>
+    </div>
+  </div>
+
+  <div id="tab-teas" class="tab-content" style="margin-top:36px;">
+    <div class="tab-intro reveal">
+      <div class="ico">🍵</div>
+      <div>
+        <h3>FitHUb Herbal Healthy Tea</h3>
+        <p>Spice up your day with our range of herbal teas crafted for health and taste. Each blend supports your wellness goals while being absolutely delicious!</p>
+      </div>
+    </div>
+    <div class="flavors-grid reveal">
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#FFFF66;"></span>Lemon</div>
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#8B4513;"></span>Original</div>
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#FFDAB9;"></span>Peach</div>
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#228B22;"></span>Natural Tulsi</div>
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#C04000;"></span>Cinnamon</div>
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#F5DEB3;"></span>Elaichi (Cardamom)</div>
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#D2691E;"></span>Sweet Ginger</div>
+      <div class="flavor-chip"><span class="flavor-dot" style="background:#B8860B;"></span>Kashmiri Kahwa</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BREAKFAST -->
+<section class="breakfast-section">
+<div class="container">
+  <div class="breakfast-grid">
+    <div class="breakfast-img reveal">
+      <img src="https://images.unsplash.com/photo-1638176066959-f9e96d9a27f7?w=700&q=80" alt="Healthy Breakfast Shakes">
+    </div>
+    <div class="breakfast-text reveal reveal-delay-1">
+      <div class="section-label">Why Our Products</div>
+      <h2 class="section-title">Change Your Breakfast, <em>Change Your Life</em></h2>
+      <div class="divider"></div>
+      <p>A nutritious breakfast is the foundation of a healthy day. Our <strong>Formula 1 Meal Replacement Shakes</strong> and <strong>Herbal Teas</strong> are designed to give your body the right nutrition at the start of every day.</p>
+      <p>Our products are part of your personalized wellness plan — not just standalone products. Coaches Mitesh and Trupti guide you on how and when to use them for maximum results.</p>
+      <p>Whether your goal is <strong>weight loss, weight gain, or maintaining energy levels</strong> — our product range supports every wellness journey.</p>
+      <div style="margin-top:24px;">
+        <a href="contact.html" class="btn-primary">Try A Free Sample 🎁</a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="images.js"></script>
+<script src="shared.js"></script>
+<script>
+function switchTab(tab, btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.tab-content').forEach(t=>t.style.display='none');
+  document.getElementById('tab-'+tab).style.display='block';
+}
+</script>
+</body>
+</html>

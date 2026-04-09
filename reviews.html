@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Member Reviews – FitHUb Nutrition Center Ahmedabad</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.page-hero{padding:130px 0 70px;background:var(--gradient-hero);text-align:center;border-bottom:1px solid var(--border);}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,58px);font-weight:700;color:var(--brown);}
+.page-hero p{font-size:16px;color:var(--text-muted);margin-top:10px;}
+.breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:14px;}
+.breadcrumb a{color:var(--accent);}
+
+/* RATING SUMMARY */
+.rating-summary{background:#fff;}
+.rating-box{background:var(--gradient-hero);border:1px solid var(--border-light);border-radius:24px;padding:40px;display:flex;gap:40px;align-items:center;flex-wrap:wrap;margin-bottom:52px;}
+.overall-score{text-align:center;flex-shrink:0;}
+.big-score{font-family:'Playfair Display',serif;font-size:72px;font-weight:700;color:var(--accent);line-height:1;}
+.big-stars{font-size:22px;color:#F5B800;letter-spacing:2px;margin:4px 0;}
+.score-label{font-size:13px;color:var(--text-muted);font-weight:600;}
+.rating-divider{width:1px;height:80px;background:var(--border);}
+.rating-bars{flex:1;min-width:220px;}
+.rating-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.bar-label{font-size:13px;color:var(--text-muted);width:30px;font-weight:600;}
+.bar-track{flex:1;height:6px;background:var(--cream2);border-radius:3px;overflow:hidden;}
+.bar-fill{height:100%;background:var(--gradient-accent);border-radius:3px;}
+.bar-count{font-size:12px;color:var(--text-muted);width:20px;text-align:right;}
+.review-meta{flex:1;min-width:180px;}
+.review-meta .total{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--brown);}
+.review-meta p{font-size:14px;color:var(--text-muted);margin-top:6px;line-height:1.6;}
+
+/* REVIEWS GRID */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.review-card{background:var(--cream);border:1.5px solid var(--border-light);border-radius:20px;padding:26px;transition:all 0.35s;position:relative;}
+.review-card:hover{background:#fff;box-shadow:0 10px 30px var(--shadow-strong);transform:translateY(-4px);}
+.review-card.hindi{background:linear-gradient(135deg,#fff9f0,#fff5e8);border-color:rgba(200,129,58,0.25);}
+.quote-mark{font-family:'Playfair Display',serif;font-size:52px;color:rgba(200,129,58,0.15);line-height:0.8;margin-bottom:8px;}
+.review-stars{color:#F5B800;font-size:15px;letter-spacing:1px;margin-bottom:12px;}
+.review-text{font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:18px;}
+.reviewer{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--border-light);}
+.reviewer-avatar{width:40px;height:40px;border-radius:50%;background:var(--gradient-accent);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:#fff;flex-shrink:0;}
+.reviewer-name{font-size:14px;font-weight:700;color:var(--brown);}
+.reviewer-result{font-size:12px;color:var(--accent);font-weight:600;}
+.result-tag{display:inline-flex;align-items:center;gap:4px;background:rgba(200,129,58,0.10);border:1px solid rgba(200,129,58,0.20);border-radius:50px;padding:3px 10px;font-size:11px;color:var(--accent);font-weight:700;margin-top:4px;}
+
+@media(max-width:900px){
+  .reviews-grid{grid-template-columns:1fr 1fr;}
+  .rating-box{flex-direction:column;gap:24px;}
+  .rating-divider{width:100%;height:1px;}
+}
+@media(max-width:600px){
+  .reviews-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body data-page="reviews">
+<div id="nav-placeholder"></div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> › Reviews</div>
+    <h1>What Our Members <em style="font-style:italic;color:var(--accent)">Say</em></h1>
+    <p>Real stories from real members — the proof is in their transformation</p>
+  </div>
+</div>
+
+<section class="rating-summary">
+<div class="container">
+  <div class="rating-box reveal">
+    <div class="overall-score">
+      <div class="big-score">5.0</div>
+      <div class="big-stars">★★★★★</div>
+      <div class="score-label">Overall Rating</div>
+    </div>
+    <div class="rating-divider"></div>
+    <div class="rating-bars">
+      <div class="rating-bar-row"><span class="bar-label">5★</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-count">13</span></div>
+      <div class="rating-bar-row"><span class="bar-label">4★</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span class="bar-count">0</span></div>
+      <div class="rating-bar-row"><span class="bar-label">3★</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span class="bar-count">0</span></div>
+      <div class="rating-bar-row"><span class="bar-label">2★</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span class="bar-count">0</span></div>
+      <div class="rating-bar-row"><span class="bar-label">1★</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span class="bar-count">0</span></div>
+    </div>
+    <div class="rating-divider"></div>
+    <div class="review-meta">
+      <div class="total">13 Reviews</div>
+      <p>Every member rated FitHUb 5 stars. Our community speaks for itself — real results, real happiness.</p>
+      <div style="margin-top:14px;"><a href="contact.html" class="btn-primary" style="font-size:13px;padding:10px 20px;">Join Us Today 🎯</a></div>
+    </div>
+  </div>
+
+  <div class="reviews-grid">
+
+    <div class="review-card reveal">
+      <div class="quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Because of Fit Hub nutrition Club, I gained 8 kg weight and my morning starts with so much energy and fun. The workout with amazing healthy tea and delicious nutrition is life changing. I feel so lucky to have international coaches who guide everyday and take sessions about better health and healthy lifestyle. Their health tips have given me amazing results.</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">AP</div>
+        <div>
+          <div class="reviewer-name">Aayushi Patel</div>
+          <div class="reviewer-result">Weight Gain Journey</div>
+          <div class="result-tag">+8 kg Healthy Gain</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal reveal-delay-1">
+      <div class="quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Fit Hub Nutrition Club is my everyday energy boost! The shakes taste great, the results are great, and the coaches are very helpful. Highly recommend it to anyone serious about their fitness journey.</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:linear-gradient(135deg,#3D2B1F,#8B6347);">DS</div>
+        <div>
+          <div class="reviewer-name">Dhrumit Sadhu</div>
+          <div class="reviewer-result">Fitness Journey</div>
+          <div class="result-tag">⚡ Energy Boosted</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal reveal-delay-2">
+      <div class="quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Fit Hub Nutrition Center provides excellent guidance, and a friendly atmosphere. Great results and highly recommended!</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:linear-gradient(135deg,#4A7C59,#6BA07A);">MP</div>
+        <div>
+          <div class="reviewer-name">Mahesvari Prajapati</div>
+          <div class="reviewer-result">Wellness Member</div>
+          <div class="result-tag">✨ Great Results</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card hindi reveal">
+      <div class="quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Fit Hub Nutrition Centre से जुड़ने के बाद मेरी हेल्थ में बहुत बड़ा बदलाव आया है। मुझे thyroid की प्रॉब्लम थी और पैरों में सूजन की परेशानी भी रहती थी। यहाँ की personal guidance, सही nutrition और regular follow-up की वजह से मुझे बहुत अच्छा रिज़ल्ट मिला है। सच में यह सेंटर भरोसेमंद है। मैं सभी को recommend करती हूँ 👍</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:linear-gradient(135deg,#C8813A,#E09A52);">RP</div>
+        <div>
+          <div class="reviewer-name">Ramilaben Patel</div>
+          <div class="reviewer-result">Thyroid & Health Issues</div>
+          <div class="result-tag">💚 Health Restored</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal reveal-delay-1">
+      <div class="quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">I am happy to be part of this Nutrition center. Amazing Experience with full of Joy. I have lost 26 kg weight and also great result in my health. Thank you so much FitHUb!</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:linear-gradient(135deg,#8B6347,#C8813A);">AP</div>
+        <div>
+          <div class="reviewer-name">Ashish Patel</div>
+          <div class="reviewer-result">Weight Loss Journey</div>
+          <div class="result-tag">-26 kg Lost</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal reveal-delay-2">
+      <div class="quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">My experience at Fithub nutrition Center was truly life-changing. Thanks to their incredible team, I've successfully lost 12 kg and feel healthier than ever. The trainers provided amazing support tailored to my needs. With top-notch facilities and a welcoming, motivating atmosphere, I was able to stay committed and see real results.</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:linear-gradient(135deg,#4A7C59,#3D2B1F);">PP</div>
+        <div>
+          <div class="reviewer-name">Pratik Patel</div>
+          <div class="reviewer-result">Body Transformation</div>
+          <div class="result-tag">-12 kg Lost</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal">
+      <div class="quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Amazing place for fitness & nutrition guidance! The coaches at Fithub Nutrition Center truly care about your goals and help you achieve them with the right diet & motivation. I lost 25 kg weight after pregnancy in 6 months. I am very happy with my result and my confidence is boosted!</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:linear-gradient(135deg,#C8813A,#6BA07A);">HM</div>
+        <div>
+          <div class="reviewer-name">Hally Modi</div>
+          <div class="reviewer-result">Post-Pregnancy Fitness</div>
+          <div class="result-tag">-25 kg in 6 months</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal reveal-delay-1">
+      <div class="quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Feeling amazing after joining this nutrition center. Life was totally changed. I lost my 23 kg, my husband lost 18 kg and currently my whole family uses this best nutrition every morning. Thanks to my super coach for giving best guidance and help to create my amazing transformation.</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:linear-gradient(135deg,#3D2B1F,#C8813A);">DP</div>
+        <div>
+          <div class="reviewer-name">Dhruvesha Patel</div>
+          <div class="reviewer-result">Family Transformation</div>
+          <div class="result-tag">-23 kg + Family</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal reveal-delay-2">
+      <div class="quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">The nutrition centre is amazing. The coach explained everything in detail and gave me a personalized plan. I feel more energetic and have started losing weight in a healthy way — I lost 18 kg post pregnancy weight. The environment is very motivating, and the coaches are super friendly. Highly recommended!</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:linear-gradient(135deg,#6BA07A,#4A7C59);">SP</div>
+        <div>
+          <div class="reviewer-name">Sejal Patel</div>
+          <div class="reviewer-result">Post-Pregnancy Recovery</div>
+          <div class="result-tag">-18 kg Post Pregnancy</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal">
+      <div class="quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Best fitness class in town. Trupti understands each body type and gives training accordingly. Nutrition shake is always delicious and full of protein. I would recommend FitHUb Nutrition Center to everyone who really wants to make a huge difference in their health and wants to achieve healthy weight.</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:linear-gradient(135deg,#8B6347,#E09A52);">DA</div>
+        <div>
+          <div class="reviewer-name">Dave Ankita</div>
+          <div class="reviewer-result">Fitness & Nutrition</div>
+          <div class="result-tag">💪 Body Transformed</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal reveal-delay-1">
+      <div class="quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Mitesh Patel Sir and Trupti Madam have created an amazing health club! The atmosphere is so positive and supportive, and milkshakes and nutrition they provide are simply excellent. Most importantly, the community here feels like family — full of motivation, care, and genuine guidance. Truly a place where health and happiness go hand in hand! 🙌💚</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:linear-gradient(135deg,#4A7C59,#C8813A);">DI</div>
+        <div>
+          <div class="reviewer-name">Dipak</div>
+          <div class="reviewer-result">Community Member</div>
+          <div class="result-tag">🏡 Family Atmosphere</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal reveal-delay-2">
+      <div class="quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">My Self Mehul and I am really happy with the results — 11 kg Weight Gain from this nutrition center! The guidance on diet and healthy habits has been life-changing. The personalized plans are easy to follow, and I've seen amazing improvements in my energy, fitness, and overall health. The team is very supportive!</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:linear-gradient(135deg,#3D2B1F,#6BA07A);">MP</div>
+        <div>
+          <div class="reviewer-name">Mehul Patel</div>
+          <div class="reviewer-result">Weight Gain Journey</div>
+          <div class="result-tag">+11 kg Healthy Gain</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal" style="grid-column:1/-1;max-width:600px;margin:0 auto;width:100%;">
+      <div class="quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Amazing Place to get back in shape. I was struggling to be healthy & fit due to my overweight but here I got an amazing personalized program & got amazing transformation. Must visit here — specially the coaches & atmosphere is amazing. Thank you team FitHUb for the amazing transformation!</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:linear-gradient(135deg,#C8813A,#3D2B1F);">PT</div>
+        <div>
+          <div class="reviewer-name">Pratik Thakker</div>
+          <div class="reviewer-result">Weight Loss Transformation</div>
+          <div class="result-tag">-20 kg Lost</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;margin-top:48px;padding-bottom:20px;">
+    <p style="font-size:16px;color:var(--text-muted);margin-bottom:20px;">Ready to write your own success story?</p>
+    <a href="contact.html" class="btn-primary">Start Your Transformation 🎯</a>
+  </div>
+</div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="images.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>

@@ -2,4 +2,4 @@
 .vercel
 *.log
 node_modules/
-thumbs.db
+Thumbs.db
